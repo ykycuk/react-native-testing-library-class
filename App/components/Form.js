@@ -29,12 +29,14 @@ const styles = StyleSheet.create({
   }
 });
 
-export const TextField = ({ label, ...props }) => (
+export const TextField = ({ label, onChangeText, ...props }) => (
   <View style={styles.row}>
     <Text style={styles.label}>{label}</Text>
     <TextInput
+      testID="Form.TextInput"
       style={styles.textfield}
       placeholderTextColor="#828282"
+      onChangeText={() => onChangeText("no!")}
       {...props}
     />
   </View>
